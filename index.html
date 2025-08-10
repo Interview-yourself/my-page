@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobboon - Coming Soon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Jobboon: Your Next Career Opportunity - Coming Soon!</title>
+    
+    <meta name="description" content="Jobboon is getting a fresh new look! We're building a smarter, faster way to find your next career opportunity. Stay tuned, we'll be live shortly.">
+    <meta name="keywords" content="Jobboon, jobs, careers, job search, hiring, coming soon, new website, career opportunities">
+    <meta name="author" content="Jobboon Team">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Jobboon: Your Next Career Opportunity - Coming Soon!">
+    <meta property="og:description" content="Jobboon is getting a fresh new look! We're building a smarter, faster way to find your next career opportunity. Stay tuned, we'll be live shortly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.jobboon.com">
+    <meta property="og:image" content="https://www.jobboon.com/images/og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
     <style>
+        :root {
+            --purple-accent: #a855f7;
+            --background-color: #0d0c1d;
+            --text-color: #ffffff;
+            --gray-text: #d1d5db; /* Corresponds to gray-300 */
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d0c1d;
-            color: #ffffff;
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
         }
+
         .text-purple-accent {
-            color: #a855f7;
+            color: var(--purple-accent);
         }
+
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -28,73 +53,155 @@
             height: 100%;
             z-index: 1;
         }
+
         .content-container {
             position: relative;
             z-index: 2;
+            text-align: center;
+            max-width: 60rem; /* Increased max-width for better readability on large screens */
         }
+
+        /* Responsive typography */
+        .h1-title {
+            font-size: 3rem;
+            line-height: 1;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        @media (min-width: 640px) { /* sm breakpoint */
+            .h1-title { font-size: 4.5rem; }
+        }
+        @media (min-width: 1024px) { /* lg breakpoint */
+            .h1-title { font-size: 6rem; }
+        }
+
+        .h2-subtitle {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .h2-subtitle { font-size: 1.875rem; }
+        }
+        @media (min-width: 1024px) {
+            .h2-subtitle { font-size: 2.25rem; }
+        }
+
+        .countdown-text {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #d8b4fe; /* a softer purple for the countdown */
+        }
+        @media (min-width: 640px) {
+            .countdown-text { font-size: 2.5rem; }
+        }
+
+        .paragraph-text {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+            color: var(--gray-text);
+        }
+        @media (min-width: 640px) {
+            .paragraph-text { font-size: 1.125rem; }
+        }
+        @media (min-width: 1024px) {
+            .paragraph-text { font-size: 1.25rem; }
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (min-width: 640px) {
+            .contact-links {
+                flex-direction: row;
+            }
+        }
+
+        .contact-button {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #9333ea; /* A slightly darker purple for contrast */
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: background-color 150ms ease-in-out;
+            text-decoration: none;
+        }
+        .contact-button:hover {
+            background-color: #8b3cda;
+        }
+
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke-width: 2;
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        /* The animation classes are kept from the original */
         .fade-in {
             animation: fadeIn 2s ease-in-out forwards;
             opacity: 0;
         }
-        .delay-1 {
-            animation-delay: 0.5s;
-        }
-        .delay-2 {
-            animation-delay: 1s;
-        }
-        .delay-3 {
-            animation-delay: 1.5s;
-        }
-        .delay-4 {
-            animation-delay: 2s;
-        }
+        .delay-1 { animation-delay: 0.5s; }
+        .delay-2 { animation-delay: 1s; }
+        .delay-3 { animation-delay: 1.5s; }
+        .delay-4 { animation-delay: 2s; }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-4">
+<body>
     <canvas id="particle-canvas"></canvas>
 
-    <div class="content-container text-center max-w-full">
-        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black mb-4 fade-in">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-400">
+    <main class="content-container">
+        <h1 class="h1-title fade-in">
+            <span style="background-image: linear-gradient(to right, #ffffff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 Jobboon
             </span>
         </h1>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-purple-accent fade-in delay-1">
-            Getting a fresh look!
+        <h2 class="h2-subtitle text-purple-accent fade-in delay-1">
+            Getting a fresh look! ✨
         </h2>
         
-        <div id="countdown" class="text-3xl sm:text-4xl font-bold mb-8 text-purple-300 fade-in delay-2"></div>
+        <p id="countdown" class="countdown-text fade-in delay-2"></p>
         
-        <p class="text-lg sm:text-xl lg:text-2xl max-w-2xl mx-auto mb-8 text-gray-300 fade-in delay-3">
-            Our site is currently under construction. Thank you for your patience. We’ll be live shortly!
+        <p class="paragraph-text fade-in delay-3">
+            Our site is currently under construction. Thank you for your patience. We’ll be live shortly! Get ready for a smarter, faster way to find your next career opportunity. 💼
         </p>
         
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 fade-in delay-4">
-            <a href="mailto:hello@jobboon.com" class="flex items-center gap-3 bg-purple-600 hover:bg-purple-700 transition-colors text-white font-bold py-3 px-6 rounded-full shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+        <div class="contact-links fade-in delay-4">
+            <a href="mailto:hello@jobboon.com" class="contact-button">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
                     <path d="M22 6L12 13 2 6"></path>
                 </svg>
                 <span>hello@jobboon.com</span>
             </a>
-            <a href="tel:+918489814275" class="flex items-center gap-3 bg-purple-600 hover:bg-purple-700 transition-colors text-white font-bold py-3 px-6 rounded-full shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+            <a href="tel:+918489814275" class="contact-button">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2h-1.64a2 2 0 0 1-2-1.82a15.82 15.82 0 0 0-7.3-7.3a2 2 0 0 1-1.82-2v-1.64a2 2 0 0 1 2-2.18a15.82 15.82 0 0 0 7.3-7.3a2 2 0 0 1 2-1.82h3a2 2 0 0 1 2 2.18c-0.1 1.6-1.5 8.96-1.5 8.96"></path>
                 </svg>
                 <span>+91 8489814275</span>
             </a>
         </div>
-    </div>
+    </main>
 
     <script>
         // Set the launch date to 30 days from the current date
@@ -112,7 +219,7 @@
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             if (distance > 0) {
-                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                countdownElement.innerHTML = `Launching in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
             } else {
                 clearInterval(countdownInterval);
                 countdownElement.innerHTML = "We're live! 🎉";
@@ -125,8 +232,8 @@
         // Three.js particle effect
         let scene, camera, renderer, particles;
         const init = () => {
-            if (!THREE.WebGLRenderer) {
-                console.error("WebGL is not supported in this browser.");
+            if (!window.THREE || !THREE.WebGLRenderer) {
+                console.error("WebGL or Three.js is not supported/loaded.");
                 return;
             }
 
@@ -134,10 +241,8 @@
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             camera.position.z = 5;
 
-            renderer = new THREE.WebGLRenderer({
-                canvas: document.getElementById('particle-canvas'),
-                alpha: true
-            });
+            const canvas = document.getElementById('particle-canvas');
+            renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -155,6 +260,7 @@
                 positions[i + 1] = (Math.random() - 0.5) * 20;
                 positions[i + 2] = (Math.random() - 0.5) * 20;
 
+                // Alternate colors for a subtle effect
                 if (i % 6 === 0) {
                     color.copy(purple);
                 } else {
@@ -198,5 +304,6 @@
 
         window.onload = init;
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </body>
 </html>
