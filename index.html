@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobboon: Your Next Career Opportunity - Coming Soon!</title>
+    <title>Jobboon: Your Next Career Opportunity is Coming!</title>
     
-    <meta name="description" content="Jobboon is getting a fresh new look! We're building a smarter, faster way to find your next career opportunity. Stay tuned, we'll be live shortly.">
-    <meta name="keywords" content="Jobboon, jobs, careers, job search, hiring, coming soon, new website, career opportunities">
+    <meta name="description" content="Jobboon is building a smarter, faster way to find your next career opportunity. Stay ahead of the curve and get notified when we launch. Your dream job is just around the corner!">
+    <meta name="keywords" content="Jobboon, jobs, careers, job search, hiring, coming soon, new website, career opportunities, employment, job finder, recruitment, tech jobs, remote jobs, find a job, job listing">
     <meta name="author" content="Jobboon Team">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="Jobboon: Your Next Career Opportunity - Coming Soon!">
-    <meta property="og:description" content="Jobboon is getting a fresh new look! We're building a smarter, faster way to find your next career opportunity. Stay tuned, we'll be live shortly.">
+    <meta property="og:title" content="Jobboon: Your Next Career Opportunity is Coming!">
+    <meta property="og:description" content="Jobboon is building a smarter, faster way to find your next career opportunity. Stay ahead of the curve and get notified when we launch.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.jobboon.com">
     <meta property="og:image" content="https://www.jobboon.com/images/og-image.png">
@@ -25,7 +25,7 @@
             --purple-accent: #a855f7;
             --background-color: #0d0c1d;
             --text-color: #ffffff;
-            --gray-text: #d1d5db; /* Corresponds to gray-300 */
+            --gray-text: #d1d5db;
         }
         
         body {
@@ -58,20 +58,19 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            max-width: 60rem; /* Increased max-width for better readability on large screens */
+            max-width: 60rem;
         }
 
-        /* Responsive typography */
         .h1-title {
             font-size: 3rem;
             line-height: 1;
             font-weight: 900;
             margin-bottom: 1rem;
         }
-        @media (min-width: 640px) { /* sm breakpoint */
+        @media (min-width: 640px) {
             .h1-title { font-size: 4.5rem; }
         }
-        @media (min-width: 1024px) { /* lg breakpoint */
+        @media (min-width: 1024px) {
             .h1-title { font-size: 6rem; }
         }
 
@@ -92,7 +91,7 @@
             font-size: 2.25rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            color: #d8b4fe; /* a softer purple for the countdown */
+            color: #d8b4fe;
         }
         @media (min-width: 640px) {
             .countdown-text { font-size: 2.5rem; }
@@ -118,6 +117,7 @@
             gap: 1.5rem;
             align-items: center;
             justify-content: center;
+            margin-bottom: 2rem;
         }
         @media (min-width: 640px) {
             .contact-links {
@@ -125,11 +125,12 @@
             }
         }
 
-        .contact-button {
+        .contact-button, .newsletter-form button {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.75rem;
-            background-color: #9333ea; /* A slightly darker purple for contrast */
+            background-color: #9333ea;
             color: #ffffff;
             font-weight: 700;
             padding: 0.75rem 1.5rem;
@@ -137,8 +138,10 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: background-color 150ms ease-in-out;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
         }
-        .contact-button:hover {
+        .contact-button:hover, .newsletter-form button:hover {
             background-color: #8b3cda;
         }
 
@@ -151,8 +154,36 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        @media (min-width: 640px) {
+            .newsletter-form {
+                flex-direction: row;
+            }
+        }
         
-        /* The animation classes are kept from the original */
+        .newsletter-form input {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            border: 1px solid var(--gray-text);
+            background-color: transparent;
+            color: var(--text-color);
+            width: 100%;
+            max-width: 20rem;
+        }
+        .newsletter-form input::placeholder {
+            color: var(--gray-text);
+        }
+        .newsletter-form button {
+            padding: 0.75rem 2rem;
+            min-width: 10rem;
+        }
+
         .fade-in {
             animation: fadeIn 2s ease-in-out forwards;
             opacity: 0;
@@ -161,6 +192,7 @@
         .delay-2 { animation-delay: 1s; }
         .delay-3 { animation-delay: 1.5s; }
         .delay-4 { animation-delay: 2s; }
+        .delay-5 { animation-delay: 2.5s; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -183,7 +215,7 @@
         <p id="countdown" class="countdown-text fade-in delay-2"></p>
         
         <p class="paragraph-text fade-in delay-3">
-            Our site is currently under construction. Thank you for your patience. We’ll be live shortly! Get ready for a smarter, faster way to find your next career opportunity. 💼
+            Our site is currently under construction. We're building a smarter, faster way to find your next career opportunity. Get ready for a better way to connect with your future! 🚀
         </p>
         
         <div class="contact-links fade-in delay-4">
@@ -201,24 +233,32 @@
                 <span>+91 8489814275</span>
             </a>
         </div>
+        
+        <div class="newsletter-form fade-in delay-5">
+            <p>Get notified when we go live:</p>
+            <form action="YOUR_NEWSLETTER_API_ENDPOINT" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required aria-label="Enter your email for newsletter subscription">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
     </main>
 
     <script>
-        // Set the launch date to 30 days from the current date
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 30);
+        // Set a fixed launch date in UTC to ensure it's the same for all users
+        // The format is "YYYY-MM-DDTHH:MM:SSZ"
+        // Example: September 20, 2025 at midnight UTC
+        const launchDate = new Date("2025-09-20T00:00:00Z");
         const countdownElement = document.getElementById('countdown');
 
         const updateCountdown = () => {
             const now = new Date().getTime();
             const distance = launchDate.getTime() - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
             if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 countdownElement.innerHTML = `Launching in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
             } else {
                 clearInterval(countdownInterval);
@@ -232,8 +272,13 @@
         // Three.js particle effect
         let scene, camera, renderer, particles;
         const init = () => {
-            if (!window.THREE || !THREE.WebGLRenderer) {
-                console.error("WebGL or Three.js is not supported/loaded.");
+            // Check for Three.js global object
+            if (typeof THREE === 'undefined') {
+                console.error("Three.js not loaded. Make sure the script tag is correct.");
+                return;
+            }
+            if (!THREE.WebGLRenderer) {
+                console.error("WebGL is not supported on this browser.");
                 return;
             }
 
@@ -260,7 +305,6 @@
                 positions[i + 1] = (Math.random() - 0.5) * 20;
                 positions[i + 2] = (Math.random() - 0.5) * 20;
 
-                // Alternate colors for a subtle effect
                 if (i % 6 === 0) {
                     color.copy(purple);
                 } else {
