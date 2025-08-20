@@ -117,7 +117,6 @@
             gap: 1.5rem;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2rem;
         }
         @media (min-width: 640px) {
             .contact-links {
@@ -125,10 +124,9 @@
             }
         }
 
-        .contact-button, .newsletter-form button {
+        .contact-button {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.75rem;
             background-color: #9333ea;
             color: #ffffff;
@@ -141,7 +139,7 @@
             border: none;
             cursor: pointer;
         }
-        .contact-button:hover, .newsletter-form button:hover {
+        .contact-button:hover {
             background-color: #8b3cda;
         }
 
@@ -155,35 +153,6 @@
             stroke-linejoin: round;
         }
 
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-        }
-        @media (min-width: 640px) {
-            .newsletter-form {
-                flex-direction: row;
-            }
-        }
-        
-        .newsletter-form input {
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            border: 1px solid var(--gray-text);
-            background-color: transparent;
-            color: var(--text-color);
-            width: 100%;
-            max-width: 20rem;
-        }
-        .newsletter-form input::placeholder {
-            color: var(--gray-text);
-        }
-        .newsletter-form button {
-            padding: 0.75rem 2rem;
-            min-width: 10rem;
-        }
-
         .fade-in {
             animation: fadeIn 2s ease-in-out forwards;
             opacity: 0;
@@ -192,7 +161,6 @@
         .delay-2 { animation-delay: 1s; }
         .delay-3 { animation-delay: 1.5s; }
         .delay-4 { animation-delay: 2s; }
-        .delay-5 { animation-delay: 2.5s; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -233,14 +201,6 @@
                 <span>+91 8489814275</span>
             </a>
         </div>
-        
-        <div class="newsletter-form fade-in delay-5">
-            <p>Get notified when we go live:</p>
-            <form action="YOUR_NEWSLETTER_API_ENDPOINT" method="post">
-                <input type="email" name="email" placeholder="Enter your email" required aria-label="Enter your email for newsletter subscription">
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
     </main>
 
     <script>
@@ -272,7 +232,6 @@
         // Three.js particle effect
         let scene, camera, renderer, particles;
         const init = () => {
-            // Check for Three.js global object
             if (typeof THREE === 'undefined') {
                 console.error("Three.js not loaded. Make sure the script tag is correct.");
                 return;
